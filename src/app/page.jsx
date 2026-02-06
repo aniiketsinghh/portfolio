@@ -84,15 +84,15 @@ export default function Portfolio() {
     try {
       // Send email using EmailJS
       await emailjs.send(
-        'service_mpzx0da',        
-         'template_cke7wv7',       
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,        
+         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,       
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
           to_name: 'Aniket Singh',
         },
-        '5J4LnSxHgifTIoxdY'        
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY       
       );
       
       // Success notification
